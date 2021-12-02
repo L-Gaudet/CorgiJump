@@ -16,7 +16,7 @@ public class Corgi : MonoBehaviour
 
     private float initialYVelocity = GameParameters.InitialYVelocity;
 
-    private bool IsCorgiBelowMidScreen = true;
+    public bool IsCorgiBelowMidScreen = true;
 
     public void Update()
     {
@@ -61,10 +61,14 @@ public class Corgi : MonoBehaviour
 
     private float CalculateYVelocityDueToGravity()
     {
-        // Vf = Vi - gt
-        float finalYVelocity = initialYVelocity - GameParameters.GravityStrength;
-        initialYVelocity = finalYVelocity;
-        return finalYVelocity;
+        if (IsCorgiMoveableInY())
+        {
+            // Vf = Vi - gt
+            float finalYVelocity = initialYVelocity - GameParameters.GravityStrength;
+            initialYVelocity = finalYVelocity;
+            return finalYVelocity;
+        }
+        return 0.0f;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
