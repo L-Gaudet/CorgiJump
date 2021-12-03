@@ -1,18 +1,19 @@
-using System.Collections;
+/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 /* TO DO:
     - move left or right with arrow keys
     - gravity only affects y velocity 
-
 */
 
 
+/*
 public class Corgi : MonoBehaviour
 {
     public SpriteRenderer CorgiSpriteRenderer;
     public SpriteTools SpriteTools;
+    public GameParameters GameParameters;
 
     private float initialYVelocity = GameParameters.InitialYVelocity;
 
@@ -79,4 +80,4 @@ public class Corgi : MonoBehaviour
             print("bruh");
         }
     }
-}
+}*/

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 999491633955124389}
   - component: {fileID: 999491633955124388}
   - component: {fileID: 999491633955124387}
-  - component: {fileID: 999491633955124384}
+  - component: {fileID: -5473332228995789379}
   m_Layer: 0
   m_Name: corgi
   m_TagString: Untagged
@@ -119,7 +119,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.08535491, y: -1.7381619}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -130,9 +130,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.94, y: 1.06}
+  m_Size: {x: 0.7692901, y: 0.113385916}
   m_EdgeRadius: 0
---- !u!114 &999491633955124384
+--- !u!114 &-5473332228995789379
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,8 +141,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 999491633955124391}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6805abdc7df945c88bc528a71385440, type: 3}
+  m_Script: {fileID: 11500000, guid: 5be35e8938364476d929c10fb6b69211, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CorgiSpriteRenderer: {fileID: 999491633955124389}
-  SpriteTools: {fileID: 0}
+  movementSpeed: 10

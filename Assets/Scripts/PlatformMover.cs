@@ -1,4 +1,4 @@
-using System.Collections;
+/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,7 +26,7 @@ public class PlatformMover : MonoBehaviour
 
     private void Move()
     {
-        Vector2 amountToMove = CalculateAmountToMoveX(direction);
+        Vector2 amountToMove = Corgi.CalculateAmountToMoveX(direction);
         PlatformSpriteRenderer.transform.Translate(amountToMove);
     }
 
@@ -40,4 +40,4 @@ public class PlatformMover : MonoBehaviour
     }
 
 
-}
+}*/
