@@ -5,43 +5,43 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Player : MonoBehaviour
 {
-    public SpriteRenderer CorgiSpriteRenderer;
+    //public SpriteRenderer CorgiSpriteRenderer;
 
     public float movementSpeed = 10f;
     private float movement = 0f;
 
-    Rigidbody2D rigidbody;
+    Rigidbody2D rigidBodyComponent;
 
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
+        rigidBodyComponent = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
         movement = Input.GetAxis("Horizontal") * movementSpeed;
 
-        if (Input.GetKey(KeyCode.A))
-        {
-            Move(rigidbody.velocity);
-        }
+        //if (Input.GetKey(KeyCode.A))
+        //{
+        //    Move(rigidbody.velocity);
+        //}
 
-        if (Input.GetKey(KeyCode.D))
-        {
-            Move(rigidbody.velocity);
-        }
+        //if (Input.GetKey(KeyCode.D))
+        //{
+        //    Move(rigidbody.velocity);
+        //}
     }
 
-    /*void FixedUpdate()
+    void FixedUpdate()
     {
-        Vector2 velocity = rigidbody.velocity;
+        Vector2 velocity = rigidBodyComponent.velocity;
         velocity.x = movement;
-        rigidbody.velocity = velocity;
-    }*/
-
-    private void Move(Vector2 direction)
-    {
-        CorgiSpriteRenderer.transform.Translate(direction);
+        rigidBodyComponent.velocity = velocity;
     }
+
+    //private void Move(Vector2 direction)
+    //{
+    //    CorgiSpriteRenderer.transform.Translate(direction);
+    //}
 
 }
