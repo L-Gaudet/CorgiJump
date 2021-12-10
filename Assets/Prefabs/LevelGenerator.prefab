@@ -44,7 +44,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platformPrefab: {fileID: 4163401477503784486, guid: 80a16cb30604c4eb89c89aeca54db5ff, type: 3}
+  cloudPrefab: {fileID: 6036562118557048853, guid: 37554f69dec114abf865fa48e0253bac, type: 3}
   numberOfPlatforms: 200
+  numberOfClouds: 75
   levelWidth: 3
   minY: 0.2
   maxY: 1.5
+  minYClouds: 3
+  maxYClouds: 20

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!212 &21102708 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 2066243709527111413, guid: bb32d8e7c4efe4eefa0d5b95b0a84d41, type: 3}
-  m_PrefabInstance: {fileID: 2066243709543010711}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &51242851 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2066243709527111412, guid: bb32d8e7c4efe4eefa0d5b95b0a84d41, type: 3}
@@ -1960,6 +1955,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 859817066155183757, guid: 584f27731a58347f9b18af47cf673be8, type: 3}
+      propertyPath: levelWidth
+      value: 2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 859817066155183757, guid: 584f27731a58347f9b18af47cf673be8, type: 3}
+      propertyPath: maxYClouds
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 859817066155183757, guid: 584f27731a58347f9b18af47cf673be8, type: 3}
+      propertyPath: minYClouds
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 859817066155183757, guid: 584f27731a58347f9b18af47cf673be8, type: 3}
+      propertyPath: cloudPrefab
+      value: 
+      objectReference: {fileID: 6036562118557048853, guid: 37554f69dec114abf865fa48e0253bac, type: 3}
     - target: {fileID: 859817066155183758, guid: 584f27731a58347f9b18af47cf673be8, type: 3}
       propertyPath: m_Name
       value: LevelGenerator
@@ -1987,25 +1998,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: corgi
       objectReference: {fileID: 0}
-    - target: {fileID: 2066243709527111411, guid: bb32d8e7c4efe4eefa0d5b95b0a84d41, type: 3}
-      propertyPath: CorgiSpriteRenderer
-      value: 
-      objectReference: {fileID: 21102708}
     - target: {fileID: 2066243709527111412, guid: bb32d8e7c4efe4eefa0d5b95b0a84d41, type: 3}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2066243709527111412, guid: bb32d8e7c4efe4eefa0d5b95b0a84d41, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2066243709527111412, guid: bb32d8e7c4efe4eefa0d5b95b0a84d41, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2066243709527111412, guid: bb32d8e7c4efe4eefa0d5b95b0a84d41, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2066243709527111412, guid: bb32d8e7c4efe4eefa0d5b95b0a84d41, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2017,7 +2012,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2066243709527111412, guid: bb32d8e7c4efe4eefa0d5b95b0a84d41, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 2066243709527111412, guid: bb32d8e7c4efe4eefa0d5b95b0a84d41, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2066,11 +2061,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6762981692167203577, guid: 39feda926ea0e4c0b8602bb05a17e798, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.09912472
+      value: 0.011
       objectReference: {fileID: 0}
     - target: {fileID: 6762981692167203577, guid: 39feda926ea0e4c0b8602bb05a17e798, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.025941446
+      value: -0.197
       objectReference: {fileID: 0}
     - target: {fileID: 6762981692167203577, guid: 39feda926ea0e4c0b8602bb05a17e798, type: 3}
       propertyPath: m_LocalPosition.z
