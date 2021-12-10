@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class Player : MonoBehaviour
+public class PlayerReverse : MonoBehaviour
 {
     public SpriteRenderer CorgiSpriteRenderer;
 
-    public float movementSpeed = 10f;
+    public float movementSpeed = -10f;
     private float movement = 0f;
 
     Rigidbody2D rigidBodyComponent;
@@ -34,11 +34,12 @@ public class Player : MonoBehaviour
     {
         if (movement < 0)
         {
-            CorgiSpriteRenderer.flipX = true; 
+            CorgiSpriteRenderer.flipX = true;
         }
         if (movement > 0)
         {
             CorgiSpriteRenderer.flipX = false;
         }
     }
+
 }

@@ -13,13 +13,13 @@ public class CameraFollowReverse : MonoBehaviour
 
     void LateUpdate()
     {
-        if (target.position.y < transform.position.y)
+        if (target.position.y < Camera.transform.position.y)
         {
-            Vector3 newPosition = new Vector3(transform.position.x, target.position.y, transform.position.z);
+            Vector3 newPosition = new Vector3(transform.position.x, target.position.y, Camera.transform.position.z);
             Camera.transform.position = Vector3.SmoothDamp(Camera.transform.position, newPosition, ref currentVelocity, smoothSpeed * Time.deltaTime);
         }
 
-        if (target.position.y < Camera.transform.position.y - 5)
+        if (target.position.y > Camera.transform.position.y + 5)
         {
             MainMenu.GameOver();
         }
