@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraFollow : MonoBehaviour
+public class CameraFollowReverse : MonoBehaviour
 {
+    public Camera Camera;
     public Transform target;
     public float smoothSpeed = 0.3f;
     public MainMenu MainMenu;
@@ -12,13 +13,13 @@ public class CameraFollow : MonoBehaviour
 
     void LateUpdate()
     {
-        if (target.position.y > transform.position.y)
+        if (target.position.y < transform.position.y)
         {
             Vector3 newPosition = new Vector3(transform.position.x, target.position.y, transform.position.z);
-            transform.position = Vector3.SmoothDamp(transform.position, newPosition, ref currentVelocity, smoothSpeed * Time.deltaTime);
+            Camera.transform.position = Vector3.SmoothDamp(Camera.transform.position, newPosition, ref currentVelocity, smoothSpeed * Time.deltaTime);
         }
 
-        if (target.position.y < transform.position.y - 5)
+        if (target.position.y < Camera.transform.position.y - 5)
         {
             MainMenu.GameOver();
         }
