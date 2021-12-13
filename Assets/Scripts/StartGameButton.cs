@@ -15,4 +15,10 @@ public class StartGameButton : MonoBehaviour
     {
         
     }
+
+    public void OnStartClick()
+    {
+        // hide start menu
+
+    }
 }

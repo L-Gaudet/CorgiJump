@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Platform : MonoBehaviour
 {
-    public float jumpForce = 10f;
+    public float jumpForce;
 
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -22,8 +22,6 @@ public class Platform : MonoBehaviour
 
     void Update()
     {
-        Vector2 screenPosition = Camera.main.WorldToScreenPoint(transform.position);
-        if (screenPosition.y < -50)
-            Destroy(gameObject);
+
     }
 }

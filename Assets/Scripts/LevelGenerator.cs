@@ -4,35 +4,43 @@ using UnityEngine;
 
 public class LevelGenerator : MonoBehaviour
 {
-    public GameObject platformPrefab;
+    public GameObject platform2Prefab;
     public GameObject cloudPrefab;
-    private Transform toFollow;
+    public GameObject platform1Prefab;
+     
 
     public int numberOfPlatforms = 200;
     public int numberOfClouds = 75;
     public float levelWidth = 3f;
     public float minY;
     public float maxY;
-    private bool canFollow;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        /*
         Vector3 spawnPosition = new Vector3();
-
         for (int i = 0; i < numberOfPlatforms; i++)
         {
             spawnPosition.y += Random.Range(minY, maxY);
             spawnPosition.x = Random.Range(-levelWidth, levelWidth);
-            Instantiate(platformPrefab, spawnPosition, Quaternion.identity);
-
+            Instantiate(platform2Prefab, spawnPosition, Quaternion.identity);
+            if (i == Random.Range(1,200))
+            {
+                spawnPosition.y += Random.Range(minY, maxY);
+                spawnPosition.x = Random.Range(-levelWidth, levelWidth);
+                Instantiate(platform1Prefab, spawnPosition, Quaternion.identity);
+            }
         }
-        canFollow = true;
-
+        */
     }
 
-
+    void SpawnPlatform()
+    {
+        //pick a random number between 1 and 100, make a spring
+        //else make a normal one
+    }
 
     void Update()
     {
