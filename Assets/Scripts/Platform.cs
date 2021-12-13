@@ -20,8 +20,11 @@ public class Platform : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-
-    }
+//    void Update()
+//    {
+//        if (transform.position.y < Camera.main.transform.position.y - 5.6)
+//        {
+//            Destroy(gameObject);
+//        }
+//    }
 }

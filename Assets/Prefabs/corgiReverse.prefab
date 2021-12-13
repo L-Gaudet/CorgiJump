@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6762981692167203576}
   - component: {fileID: 6762981692167203579}
   - component: {fileID: 6762981692167203578}
-  - component: {fileID: 7694814652228603556}
+  - component: {fileID: 3279143193823949194}
   m_Layer: 0
   m_Name: corgiReverse
   m_TagString: Untagged
@@ -132,7 +132,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &7694814652228603556
+--- !u!114 &3279143193823949194
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -141,7 +141,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 6762981692167203525}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2bd76a0cc6f941aaa49ac6f4cf9599a, type: 3}
+  m_Script: {fileID: 11500000, guid: 5be35e8938364476d929c10fb6b69211, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CorgiSpriteRenderer: {fileID: 6762981692167203576}
   movementSpeed: -10

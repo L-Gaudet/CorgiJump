@@ -16,12 +16,12 @@ public class CameraFollow : MonoBehaviour
        //  Camera.main.
         if (target.position.y > Camera.transform.position.y)
         {
-            Vector3 newPosition = new Vector3(transform.position.x, target.position.y, Camera.transform.position.z);
+            Vector3 newPosition = new Vector3(Camera.transform.position.x, target.position.y, Camera.transform.position.z);
             Camera.transform.position = Vector3.SmoothDamp(Camera.transform.position, newPosition,
                 ref currentVelocity, smoothSpeed * Time.deltaTime);
         }
 
-        if (target.position.y < transform.position.y - 5)
+        if (target.position.y < Camera.transform.position.y - 5.5)
         {
             MainMenu.GameOver();
         }

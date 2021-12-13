@@ -5,7 +5,7 @@ using UnityEngine;
 public class MainMenu : MonoBehaviour
 {
     public GameObject Game;
-    public GameObject MainMenuCorgi;
+    public GameObject MainMenuElements;
     public GameObject MainMenuPanel;
     public GameObject GameReverse;
     public GameObject GameOverPanel;
@@ -15,7 +15,7 @@ public class MainMenu : MonoBehaviour
     {
         GameReverse.SetActive(false);
         Game.SetActive(false);
-        MainMenuCorgi.SetActive(true);
+        MainMenuElements.SetActive(true);
         MainMenuPanel.SetActive(true);
         GameOverPanel.SetActive(false);
     }
@@ -39,14 +39,14 @@ public class MainMenu : MonoBehaviour
 
     public void startGame()
     {
-        MainMenuCorgi.SetActive(false);
+        MainMenuElements.SetActive(false);
         MainMenuPanel.SetActive(false);
         Game.SetActive(true);
     }
 
     public void startGameReverse()
     {
-        MainMenuCorgi.SetActive(false);
+        MainMenuElements.SetActive(false);
         MainMenuPanel.SetActive(false);
         GameReverse.SetActive(true);
     }

@@ -91,7 +91,7 @@ public class PlatformSpawner : MonoBehaviour
 
     private bool IsTooFarOffScreen(GameObject platformObject)
     {
-        if (platformObject.transform.position.y < -10f)
+        if (platformObject.transform.position.y < Camera.main.transform.position.y - 5.6)
             return true;
         return false;
     }
