@@ -13,11 +13,7 @@ public class MainMenu : MonoBehaviour
 
     private void Awake()
     {
-        GameReverse.SetActive(false);
-        Game.SetActive(false);
-        MainMenuElements.SetActive(true);
-        MainMenuPanel.SetActive(true);
-        GameOverPanel.SetActive(false);
+        mainMenu();
     }
 
     //// Start is called before the first frame update
@@ -35,6 +31,25 @@ public class MainMenu : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void mainMenu()
+    {
+        GameReverse.SetActive(false);
+        Game.SetActive(false);
+        MainMenuElements.SetActive(true);
+        MainMenuPanel.SetActive(true);
+        GameOverPanel.SetActive(false);
+    }
+
+    public void Reset()
+    {
+        Camera.main.transform.position = new Vector3(0f, 0f, 0f);
+        GameReverse.SetActive(false);
+        Game.SetActive(false);
+        MainMenuElements.SetActive(true);
+        MainMenuPanel.SetActive(true);
+        GameOverPanel.SetActive(false);
     }
 
     public void startGame()
