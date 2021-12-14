@@ -8,7 +8,7 @@ public class MovingPlatform : MonoBehaviour
     public float maxX;
     public float moveSpeed;
 
-    void Update()
+    void FixedUpdate()
     {
         if (transform.position.x > maxX)
             moveRight = false;
