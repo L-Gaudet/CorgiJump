@@ -5,7 +5,6 @@ using UnityEngine;
 public class Cloud : MonoBehaviour
 {
     public GameObject backgroundCloud;
-    //public int maxNumberOfClouds = 3;
     public float minimumYDistance = 5f;
     public float maximumYDistance = 10f;
     public int numberOfClouds = 5;
@@ -18,21 +17,10 @@ public class Cloud : MonoBehaviour
     {
         if (isMoving)
         {
-
-            //MovePlatforms();  // just for testing
             UpdateClouds();
         }
 
     }
-
-    //public void CreateRandomCloud()
-    //{
-    //    float randomX = Random.Range(-4f, 4f);
-    //    float randomZ = Random.Range(0.1f, 10f);
-    //    //float randomY = Random.Range(minimumYDistance, maximumYDistance) + lastPlatformY;
-    //    Vector3 placement = new Vector3(randomX, 15f , randomZ);
-
-    //}
 
     public void CreateInitialClouds()
     {
@@ -51,7 +39,7 @@ public class Cloud : MonoBehaviour
     {
         float randomX = Random.Range(-4f, 4f);
         float randomY = Random.Range(minimumYDistance, maximumYDistance) + lastCloudY;
-        float randomZ = Random.Range(0.1f, 10f);
+        float randomZ = Random.Range(0.4f, 7f);
 
 
         Instantiate(backgroundCloud, new Vector3(randomX, randomY, randomZ), Quaternion.identity);
@@ -64,12 +52,12 @@ public class Cloud : MonoBehaviour
         // get all the clouds
         GameObject[] cloudObjects = GameObject.FindGameObjectsWithTag("Cloud");
 
-        // if a platform is too far off bottom screen
+        // if a cloud is too far off bottom screen
         for (int i = 0; i < cloudObjects.Length; i++)
         {
             if (IsTooFarOffScreen(cloudObjects[i]))
             {
-                DeletePlatform(cloudObjects[i]);
+                DeleteCloud(cloudObjects[i]);
                 AddNewCloud(cloudObjects);
             }
         }
@@ -77,12 +65,12 @@ public class Cloud : MonoBehaviour
 
     private bool IsTooFarOffScreen(GameObject cloudObject)
     {
-        if (cloudObject.transform.position.y < Camera.main.transform.position.y - 10)
+        if (cloudObject.transform.position.y < Camera.main.transform.position.y - 13)
             return true;
         return false;
     }
 
-    private void DeletePlatform(GameObject platformObject)
+    private void DeleteCloud(GameObject platformObject)
     {
         Destroy(platformObject);
     }
@@ -107,9 +95,3 @@ public class Cloud : MonoBehaviour
         return highestCloud;
     }
 }
-
-   // public float randomY = Random.Range(minimumYDistance, maximumYDistance) + lastPlatformY;
-
-    // spawn between z = 0 to 10
-    //               x = -4 to 4
-    //               y = 

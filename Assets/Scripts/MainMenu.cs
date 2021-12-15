@@ -10,7 +10,6 @@ public class MainMenu : MonoBehaviour
     public GameObject GameReverse;
     public GameObject GameOverPanel;
     public GameObject ScoreCanvas;
-    public GameObject LevelGenerator;
     public GameObject SafetyNet;
     public GameObject PlayerCorgi; 
 
@@ -20,18 +19,6 @@ public class MainMenu : MonoBehaviour
         mainMenu();
     }
 
-    //// Start is called before the first frame update
-    //void Start()
-    //{
-    //    GameReverse.SetActive(false);
-    //    Game.SetActive(false);
-    //    MainMenuCorgi.SetActive(true);
-    //    MainMenuPanel.SetActive(true);
-    //    GameOverPanel.SetActive(false);
-
-    //}
-
-    // Update is called once per frame
     void Update()
     {
         
@@ -62,6 +49,7 @@ public class MainMenu : MonoBehaviour
     public void resetGame()
     {
         deletePlatforms();
+        deleteClouds();
         deletePlayer();
         deleteLevelGenerator();
     }
@@ -76,6 +64,16 @@ public class MainMenu : MonoBehaviour
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         Destroy(player);
+    }
+
+    public void deleteClouds()
+    {
+        // get all the clouds
+        GameObject[] cloudObjects = GameObject.FindGameObjectsWithTag("Cloud");
+        foreach (GameObject gameObject in cloudObjects)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void deletePlatforms()
@@ -94,7 +92,6 @@ public class MainMenu : MonoBehaviour
         MainMenuPanel.SetActive(false);
         Game.SetActive(true);
         ScoreCanvas.SetActive(true);
-        Instantiate(LevelGenerator);
         Instantiate(SafetyNet);
         PlayerCorgi.transform.position = new Vector3(-0.1f, -0.025f, -1f);
     }
