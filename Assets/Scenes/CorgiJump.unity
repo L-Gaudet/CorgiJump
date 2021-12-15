@@ -243,15 +243,15 @@ RectTransform:
   m_GameObject: {fileID: 138185357}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.333333, y: 3.333333, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1634874957}
-  m_Father: {fileID: 2117992280}
-  m_RootOrder: 0
+  m_Father: {fileID: 1050796607}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 554.9, y: 1134.55}
+  m_AnchoredPosition: {x: 13.1, y: 23.765015}
   m_SizeDelta: {x: 67.5, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &138185359
@@ -617,7 +617,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 421700125}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -159.5, y: -314.5, z: 0}
+  m_LocalPosition: {x: -172, y: -340.1, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 222428677}
@@ -853,6 +853,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1676021848}
         m_TargetAssemblyTypeName: PlatformSpawner, Assembly-CSharp
         m_MethodName: CreateInitialPlatforms
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1676021850}
+        m_TargetAssemblyTypeName: Cloud, Assembly-CSharp
+        m_MethodName: CreateInitialClouds
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1169,13 +1181,14 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2117992280}
+  - {fileID: 138185358}
   m_Father: {fileID: 1621217281}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -12.549983, y: -25.969934}
+  m_SizeDelta: {x: 25.100033, y: -51.940125}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1050796608
 MonoBehaviour:
@@ -1803,8 +1816,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1676021849}
   - component: {fileID: 1676021848}
+  - component: {fileID: 1676021850}
   m_Layer: 0
-  m_Name: PlatformSpawner
+  m_Name: Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1839,6 +1853,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1676021850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676021847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32df70b265cf349daaa6cf052c0e27da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundCloud: {fileID: 6036562118557048853, guid: 37554f69dec114abf865fa48e0253bac, type: 3}
+  minimumYDistance: 4
+  maximumYDistance: 8
+  numberOfClouds: 20
 --- !u!1 &1747040032
 GameObject:
   m_ObjectHideFlags: 0
@@ -2253,7 +2283,7 @@ MonoBehaviour:
   GameReverse: {fileID: 1417104500}
   GameOverPanel: {fileID: 1050796606}
   ScoreCanvas: {fileID: 979756198}
-  LevelGenerator: {fileID: 1518489828860510232, guid: 459ca01c1a4b64fca803486d9246cfa9, type: 3}
+  LevelGenerator: {fileID: 4036170764924029885, guid: 459ca01c1a4b64fca803486d9246cfa9, type: 3}
   SafetyNet: {fileID: 8007096378464294054, guid: 11135335cfdaa4834ac80293297657fd, type: 3}
   PlayerCorgi: {fileID: 51242847}
 --- !u!4 &1962935640
@@ -2391,8 +2421,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -159.4, y: -316.6, z: 0}
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
-  m_Children:
-  - {fileID: 138185358}
+  m_Children: []
   m_Father: {fileID: 1050796607}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
