@@ -10,6 +10,9 @@ public class MainMenu : MonoBehaviour
     public GameObject GameReverse;
     public GameObject GameOverPanel;
     public GameObject ScoreCanvas;
+    public GameObject LevelGenerator;
+    public GameObject SafetyNet;
+    public GameObject PlayerCorgi; 
 
 
     private void Awake()
@@ -53,6 +56,36 @@ public class MainMenu : MonoBehaviour
         MainMenuPanel.SetActive(true);
         GameOverPanel.SetActive(false);
         ScoreCanvas.SetActive(false);
+        resetGame();
+    }
+
+    public void resetGame()
+    {
+        deletePlatforms();
+        deletePlayer();
+        deleteLevelGenerator();
+    }
+
+    public void deleteLevelGenerator()
+    {
+        GameObject generator = GameObject.FindGameObjectWithTag("Generator");
+        Destroy(generator);
+    }
+
+    public void deletePlayer()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        Destroy(player);
+    }
+
+    public void deletePlatforms()
+    {
+        // get all the platforms
+        GameObject[] platformObjects = GameObject.FindGameObjectsWithTag("Platform");
+        foreach(GameObject gameObject in platformObjects)
+        {
+            Destroy(gameObject);
+        }
     }
 
     public void startGame()
@@ -61,6 +94,9 @@ public class MainMenu : MonoBehaviour
         MainMenuPanel.SetActive(false);
         Game.SetActive(true);
         ScoreCanvas.SetActive(true);
+        Instantiate(LevelGenerator);
+        Instantiate(SafetyNet);
+        PlayerCorgi.transform.position = new Vector3(-0.1f, -0.025f, -1f);
     }
 
     public void startGameReverse()
