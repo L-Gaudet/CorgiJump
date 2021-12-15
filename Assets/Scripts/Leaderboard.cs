@@ -18,19 +18,22 @@ public class Leaderboard : MonoBehaviour
     private int[] scoreArray = new int[6];
     private int currentScoreInt;
 
+    private void Awake()
+    {
+        GetScoresFromPlayerPrefs();
+    }
+
     public void getCurrentScoreAsInt()
     {
         String s = currentScoreText.text.ToString(); // gets score text as string
         currentScoreInt = int.Parse(s.Split(' ')[1]); // parses the score text string and gets second component which is the score and converts to int
         UpdateScoreArray();
         print(currentScoreInt);
-        //SortScores();
     }
 
 
     public void setScores()
     {
-        //SortScores();
         setLeaderboard();
         SetScoresToPlayerPrefs();
         saveScoresToDisk();
@@ -53,7 +56,7 @@ public class Leaderboard : MonoBehaviour
     private void GetScoresFromPlayerPrefs()
     {
         int score;
-        for(int i = 0; i < 5; i++)
+        for(int i = 0; i < 6; i++)
         {
             score = PlayerPrefs.GetInt("score" + i);
             scoreArray[i] = score;
@@ -82,15 +85,9 @@ public class Leaderboard : MonoBehaviour
 
     private void SetScoresToPlayerPrefs()
     {
-        for(int i = 0; i < 5; i++)
+        for(int i = 0; i < 6; i++)
         {
-            PlayerPrefs.SetInt("score" + i, scoreArray[i]);
+            PlayerPrefs.SetInt("score" + i.ToString(), scoreArray[i]);
         }
     }
-
-    private void SortScores()
-    {
-        Array.Sort(scoreArray);
-    }
-
 }

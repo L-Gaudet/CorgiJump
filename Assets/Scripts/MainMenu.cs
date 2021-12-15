@@ -13,6 +13,7 @@ public class MainMenu : MonoBehaviour
     public GameObject SafetyNet;
     public GameObject PlayerCorgi;
     public GameObject LeaderboardPanel;
+    public GameObject CorgiMainMenu;
 
     private void Awake()
     {
@@ -51,7 +52,13 @@ public class MainMenu : MonoBehaviour
         MainMenuPanel.SetActive(true);
         GameOverPanel.SetActive(false);
         ScoreCanvas.SetActive(false);
+        ResetMainMenuCorgi();
         resetGame();
+    }
+
+    public void ResetMainMenuCorgi()
+    {
+        CorgiMainMenu.transform.position = new Vector3(CorgiMainMenu.transform.position.x, 1.3f, CorgiMainMenu.transform.position.z);
     }
 
     public void resetGame()
