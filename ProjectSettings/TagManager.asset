@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Generator
   - Cloud
+  - Spawner
   layers:
   - Default
   - TransparentFX

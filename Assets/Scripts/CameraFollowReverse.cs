@@ -19,7 +19,7 @@ public class CameraFollowReverse : MonoBehaviour
             Camera.transform.position = Vector3.SmoothDamp(Camera.transform.position, newPosition, ref currentVelocity, smoothSpeed * Time.deltaTime);
         }
 
-        if (target.position.y > Camera.transform.position.y + 5.5)
+        if (target.position.y > Camera.transform.position.y + 6.5)
         {
             MainMenu.GameOver();
         }

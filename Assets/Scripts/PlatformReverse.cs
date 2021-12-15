@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlatformReverse : MonoBehaviour
 {
-    public float jumpForce = -10f;
+    public float jumpForce;
 
     void OnCollisionEnter2D(Collision2D collision)
     {

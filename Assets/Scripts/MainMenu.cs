@@ -12,8 +12,12 @@ public class MainMenu : MonoBehaviour
     public GameObject ScoreCanvas;
     public GameObject SafetyNet;
     public GameObject PlayerCorgi;
+    public GameObject PlayerCorgiReverse;
     public GameObject LeaderboardPanel;
     public GameObject CorgiMainMenu;
+    public GameObject SafetyNetReverse;
+    public GameObject Spawner;
+    public GameObject SpawnerReverse;
 
     private void Awake()
     {
@@ -63,22 +67,15 @@ public class MainMenu : MonoBehaviour
 
     public void resetGame()
     {
+        deleteSpawner();
         deletePlatforms();
         deleteClouds();
-        deletePlayer();
-        deleteLevelGenerator();
     }
 
-    public void deleteLevelGenerator()
+    public void deleteSpawner()
     {
-        GameObject generator = GameObject.FindGameObjectWithTag("Generator");
-        Destroy(generator);
-    }
-
-    public void deletePlayer()
-    {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        Destroy(player);
+        GameObject spawner = GameObject.FindGameObjectWithTag("Spawner");
+        Destroy(spawner);
     }
 
     public void deleteClouds()
@@ -108,6 +105,7 @@ public class MainMenu : MonoBehaviour
         Game.SetActive(true);
         ScoreCanvas.SetActive(true);
         Instantiate(SafetyNet);
+        Instantiate(Spawner);
         PlayerCorgi.transform.position = new Vector3(-0.1f, -0.025f, -1f);
     }
 
@@ -117,6 +115,9 @@ public class MainMenu : MonoBehaviour
         MainMenuPanel.SetActive(false);
         GameReverse.SetActive(true);
         ScoreCanvas.SetActive(true);
+        Instantiate(SafetyNetReverse);
+        Instantiate(SpawnerReverse);
+        PlayerCorgiReverse.transform.position = new Vector3(0f, 0f, 0f);
     }
 
     public void GameOver()

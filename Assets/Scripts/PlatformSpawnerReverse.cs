@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlatformSpawner : MonoBehaviour
+public class PlatformSpawnerReverse : MonoBehaviour
 {
-    public GameObject Platform1Prefab;
-    public GameObject Platform2Prefab;
-    public GameObject Platform3Prefab;
+    public GameObject Platform1ReversePrefab;
+    public GameObject Platform2ReversePrefab;
+    public GameObject Platform3ReversePrefab;
 
-    private float minimumYDistance = 1f;
-    private float maximumYDistance = 3f;
+    private float minimumYDistance = -1f;
+    private float maximumYDistance = -3f;
     private int numberOfPlatforms = 50;
 
     private bool isMoving = false;
@@ -24,6 +24,8 @@ public class PlatformSpawner : MonoBehaviour
     {
         if (isMoving)
         {
+
+            //MovePlatforms();  // just for testing
             UpdatePlatforms();
         }
 
@@ -36,7 +38,7 @@ public class PlatformSpawner : MonoBehaviour
         // if a platform is too far off bottom screen
         for (int i = 0; i < platformObjects.Length; i++)
         {
-            platformObjects[i].transform.Translate(new Vector3(0f, -0.4f, 0f));
+            platformObjects[i].transform.Translate(new Vector3(0f, 0.4f, 0f));
         }
     }
 
@@ -44,7 +46,7 @@ public class PlatformSpawner : MonoBehaviour
     {
         isMoving = true;
 
-        float lastPlatformHeight = -4f;
+        float lastPlatformHeight = 4f;
         SpawnPlatform(lastPlatformHeight);
 
         for (int i = 0; i < numberOfPlatforms; i++)
@@ -61,15 +63,15 @@ public class PlatformSpawner : MonoBehaviour
         int randomNumber = Random.Range(0, 100);
         if (randomNumber < 20)
         {
-            Instantiate(Platform1Prefab, new Vector3(randomX, randomY, 0f), Quaternion.identity);
+            Instantiate(Platform1ReversePrefab, new Vector3(randomX, randomY, 0f), Quaternion.identity);
         }
         else if (randomNumber < 80)
         {
-            Instantiate(Platform2Prefab, new Vector3(randomX, randomY, 0f), Quaternion.identity);
+            Instantiate(Platform2ReversePrefab, new Vector3(randomX, randomY, 0f), Quaternion.identity);
         }
         else
         {
-            Instantiate(Platform3Prefab, new Vector3(randomX, randomY, 0f), Quaternion.identity);
+            Instantiate(Platform3ReversePrefab, new Vector3(randomX, randomY, 0f), Quaternion.identity);
         }
 
         return randomY;
@@ -93,7 +95,7 @@ public class PlatformSpawner : MonoBehaviour
 
     private bool IsTooFarOffScreen(GameObject platformObject)
     {
-        if (platformObject.transform.position.y < Camera.main.transform.position.y - 5.6)
+        if (platformObject.transform.position.y > Camera.main.transform.position.y + 5.6)
             return true;
         return false;
     }
@@ -116,7 +118,7 @@ public class PlatformSpawner : MonoBehaviour
         GameObject highestPlatform = platformObjects[0];
         foreach (GameObject platformObject in platformObjects)
         {
-            if (platformObject.transform.position.y > highestPlatform.transform.position.y)
+            if (platformObject.transform.position.y < highestPlatform.transform.position.y)
                 highestPlatform = platformObject;
         }
 

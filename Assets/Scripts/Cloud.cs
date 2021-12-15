@@ -11,6 +11,10 @@ public class Cloud : MonoBehaviour
 
     private bool isMoving = false;
 
+    private void Start()
+    {
+        CreateInitialClouds();
+    }
 
     // Update is called once per frame
     void Update()

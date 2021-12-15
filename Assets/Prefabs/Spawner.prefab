@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6175239400233413617
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6175239400233413631}
+  - component: {fileID: 6175239400233413630}
+  - component: {fileID: 6175239400233413628}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: Spawner
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6175239400233413631
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6175239400233413617}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.81024754, y: 1.9305409, z: -10.287674}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6175239400233413630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6175239400233413617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 103f50179275e4916b97a1ad1ca8fda0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Platform1Prefab: {fileID: 5760522104254245338, guid: 03f344658846746b295ba8c704b249a1, type: 3}
+  Platform2Prefab: {fileID: 4163401477503784486, guid: 80a16cb30604c4eb89c89aeca54db5ff, type: 3}
+  Platform3Prefab: {fileID: 8455858325870382740, guid: 871b987d5f5e74833ad9a25136f06fd7, type: 3}
+--- !u!114 &6175239400233413628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6175239400233413617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32df70b265cf349daaa6cf052c0e27da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundCloud: {fileID: 6036562118557048853, guid: 37554f69dec114abf865fa48e0253bac, type: 3}
+  minimumYDistance: 4
+  maximumYDistance: 8
+  numberOfClouds: 20
