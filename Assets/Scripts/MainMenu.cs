@@ -9,6 +9,7 @@ public class MainMenu : MonoBehaviour
     public GameObject MainMenuPanel;
     public GameObject GameReverse;
     public GameObject GameOverPanel;
+    public GameObject ScoreCanvas;
 
 
     private void Awake()
@@ -40,16 +41,18 @@ public class MainMenu : MonoBehaviour
         MainMenuElements.SetActive(true);
         MainMenuPanel.SetActive(true);
         GameOverPanel.SetActive(false);
+        ScoreCanvas.SetActive(false);
     }
 
     public void Reset()
     {
-        Camera.main.transform.position = new Vector3(0f, 0f, 0f);
+        Camera.main.transform.position = new Vector3(Camera.main.transform.position.x, 1f, Camera.main.transform.position.z);
         GameReverse.SetActive(false);
         Game.SetActive(false);
         MainMenuElements.SetActive(true);
         MainMenuPanel.SetActive(true);
         GameOverPanel.SetActive(false);
+        ScoreCanvas.SetActive(false);
     }
 
     public void startGame()
@@ -57,6 +60,7 @@ public class MainMenu : MonoBehaviour
         MainMenuElements.SetActive(false);
         MainMenuPanel.SetActive(false);
         Game.SetActive(true);
+        ScoreCanvas.SetActive(true);
     }
 
     public void startGameReverse()
@@ -64,6 +68,7 @@ public class MainMenu : MonoBehaviour
         MainMenuElements.SetActive(false);
         MainMenuPanel.SetActive(false);
         GameReverse.SetActive(true);
+        ScoreCanvas.SetActive(true);
     }
 
     public void GameOver()

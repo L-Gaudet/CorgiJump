@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerReverse : MonoBehaviour
@@ -9,8 +10,11 @@ public class PlayerReverse : MonoBehaviour
 
     public float movementSpeed = -10f;
     private float movement = 0f;
+    public float topScore = 0.0f;
 
     Rigidbody2D rigidBodyComponent;
+
+    public Text scoreText;
 
     void Start()
     {
@@ -20,6 +24,11 @@ public class PlayerReverse : MonoBehaviour
     void Update()
     {
         movement = Input.GetAxis("Horizontal") * movementSpeed;
+        if (rigidBodyComponent.velocity.y < 0 && transform.position.y < topScore)
+        {
+            topScore = transform.position.y * -1;
+        }
+        scoreText.text = "Score: " + (Mathf.Round((topScore * 2))).ToString();
     }
 
     void FixedUpdate()
