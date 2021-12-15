@@ -11,8 +11,8 @@ public class MainMenu : MonoBehaviour
     public GameObject GameOverPanel;
     public GameObject ScoreCanvas;
     public GameObject SafetyNet;
-    public GameObject PlayerCorgi; 
-
+    public GameObject PlayerCorgi;
+    public GameObject LeaderboardPanel;
 
     private void Awake()
     {
@@ -32,7 +32,15 @@ public class MainMenu : MonoBehaviour
         MainMenuPanel.SetActive(true);
         GameOverPanel.SetActive(false);
         ScoreCanvas.SetActive(false);
+        LeaderboardPanel.SetActive(false);
     }
+
+    public void ShowLeaderboard()
+    {
+        MainMenuPanel.SetActive(false);
+        LeaderboardPanel.SetActive(true);
+    }
+
 
     public void Reset()
     {

@@ -39,6 +39,11 @@ public class Player : MonoBehaviour
         checkToFlipCorgiSprite();
     }
 
+    public void Reset()
+    {
+        topScore = 0.0f;
+    }
+
     private void checkToFlipCorgiSprite()
     {
         if (movement < 0)
