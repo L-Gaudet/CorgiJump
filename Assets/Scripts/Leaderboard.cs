@@ -15,19 +15,22 @@ public class Leaderboard : MonoBehaviour
     public Text currentScoreText;
     public Text[] scoreSlots = new Text[5];
 
-    private int[] scoreArray = new int[5];
+    private int[] scoreArray = new int[6];
     private int currentScoreInt;
 
     public void getCurrentScoreAsInt()
     {
         String s = currentScoreText.text.ToString(); // gets score text as string
         currentScoreInt = int.Parse(s.Split(' ')[1]); // parses the score text string and gets second component which is the score and converts to int
-        CheckIfScoreInTop5();
+        UpdateScoreArray();
         print(currentScoreInt);
+        //SortScores();
     }
+
 
     public void setScores()
     {
+        //SortScores();
         setLeaderboard();
         SetScoresToPlayerPrefs();
         saveScoresToDisk();
@@ -57,12 +60,20 @@ public class Leaderboard : MonoBehaviour
         }
     }
 
-    private void CheckIfScoreInTop5()
+    private void UpdateScoreArray()
     {
         for(int i = 0; i < 5; i++)
         {
             if(currentScoreInt > scoreArray[i])
             {
+                int j = 5;
+                do
+                {
+                    scoreArray[j] = scoreArray[j - 1];
+                    --j;
+
+                } while (j > i);
+
                 scoreArray[i] = currentScoreInt;
                 break;
             }
